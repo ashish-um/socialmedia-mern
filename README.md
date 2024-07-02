@@ -1,4 +1,4 @@
-# A Basic Social Media Implementaion
+## A Basic Social Media Implementaion
 
 ### Features:
 1. Authentication (Login, Registration)
