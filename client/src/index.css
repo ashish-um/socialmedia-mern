@@ -49,6 +49,8 @@ form {
   align-items: center;
   margin-top: 10rem;
   width: max-content;
+  /* max-width: 800px; */
+
   background: rgb(41, 40, 40);
   margin-inline: auto;
   padding: 50px;
@@ -86,7 +88,6 @@ textarea {
   background: rgb(52, 51, 51);
   font-size: large;
   width: calc(100% - 20px);
-  min-width: 300px;
   max-width: 800px;
   max-height: 200px;
   min-height: 30px;
@@ -111,4 +112,32 @@ textarea:focus {
 
 .pointer:hover {
   cursor: pointer;
+}
+
+.browser {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    margin-top: 60px;
+    padding: 30px;
+    width: calc(95% - 60px);
+  }
+
+  textarea {
+    max-width: calc(100% - 20px);
+    min-width: calc(100% - 20px);
+  }
+
+  .mobile {
+    display: block;
+  }
+  .browser {
+    display: none;
+  }
 }

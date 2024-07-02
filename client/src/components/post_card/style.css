@@ -11,11 +11,20 @@
   display: flex;
   align-items: top;
   gap: 10px;
+
+  p {
+    font-size: clamp(15px, 2vw, 16px);
+  }
+  h2 {
+    overflow-wrap: anywhere;
+    font-size: clamp(20px, 2vw, 22px);
+  }
 }
 
 .img-holder {
-  height: 500px;
+  height: 100%;
   width: 100%;
+  display: flex;
   /* background-color: black; */
   position: relative;
   border-radius: 15px;
@@ -25,6 +34,7 @@
   background-position: center;
 
   img {
+    max-height: 400px;
     object-fit: contain;
     position: relative;
     z-index: 1;
@@ -78,7 +88,7 @@
   opacity: 1;
   transition: all 400ms;
   /* animation: click 1s forwards; */
-  animation: click 600ms forwards;
+  animation: click 1s forwards;
   pointer-events: none;
 }
 
@@ -102,14 +112,15 @@
 }
 
 @keyframes click {
-  50% {
-    bottom: 10px;
-    transform: scale(20);
-    /* opacity: 1; */
-  }
   to {
     opacity: 0;
     bottom: 10px;
     transform: scale(20);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .btn {
+    padding: 5px 18px;
   }
 }

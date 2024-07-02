@@ -3,10 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import ProfileIcon from "../profile_icon/ProfileIcon";
 import "./nav.css";
+import CreateSvg from "../../assets/svg/CreateSvg";
+import LogoutSvg from "../../assets/svg/LogoutSvg";
+import SavedSvg from "../../assets/svg/SavedSvg";
 
 function Navbar() {
   const [cookies, _, removeCookie] = useCookies(["access_token"]);
   const navigate = useNavigate();
+  const iconSize = 20;
 
   const logOut = () => {
     const res = confirm("This will log you out!");
@@ -30,13 +34,31 @@ function Navbar() {
           {cookies.access_token ? (
             <>
               <Link className="nav-element" to={"/create"}>
-                Create
+                <div className="browser">Create</div>
+                <div
+                  className="mobile"
+                  style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
+                >
+                  <CreateSvg />{" "}
+                </div>
               </Link>
               <Link className="nav-element" to={"/saved"}>
-                Saved
+                <div className="browser">Saved</div>
+                <div
+                  className="mobile"
+                  style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
+                >
+                  <SavedSvg />
+                </div>
               </Link>
               <div className="nav-element" onClick={logOut} to={"/auth"}>
-                Log out
+                <div className="browser">Log out</div>
+                <div
+                  className="mobile"
+                  style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
+                >
+                  <LogoutSvg />
+                </div>
               </div>
               <ProfileIcon username={localStorage.getItem("username")} />
             </>

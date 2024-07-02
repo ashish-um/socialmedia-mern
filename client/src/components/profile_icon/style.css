@@ -1,4 +1,6 @@
 .profile-icon {
+  flex: 0 0;
+  flex-basis: 35px;
   background-color: darkblue;
   width: 35px;
   height: 35px;
