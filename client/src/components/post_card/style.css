@@ -34,7 +34,7 @@
   background-position: center;
 
   img {
-    max-height: 400px;
+    max-height: 40vh;
     object-fit: contain;
     position: relative;
     z-index: 1;
@@ -45,7 +45,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.52);
+  background: rgba(0, 0, 0, 0.623);
   z-index: 0;
   backdrop-filter: blur(8px);
 }
@@ -122,5 +122,13 @@
 @media only screen and (max-width: 600px) {
   .btn {
     padding: 5px 18px;
+  }
+
+  .img-holder {
+    background: #2f2f2f !important;
+  }
+
+  .img-holder::before {
+    display: none;
   }
 }
