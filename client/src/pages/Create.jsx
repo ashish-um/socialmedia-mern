@@ -13,7 +13,7 @@ function Create() {
     const imageURL = e.target.elements.image.value;
     axios
       .post(
-        "http://localhost:3000/post",
+        "https://socialmedia-mern-api.vercel.app/post",
         {
           authorID: localStorage.getItem("userID"),
           title,

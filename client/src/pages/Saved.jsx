@@ -12,7 +12,9 @@ function Saved() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3000/post/saved/${localStorage.getItem("userID")}`,
+        `https://socialmedia-mern-api.vercel.app/post/saved/${localStorage.getItem(
+          "userID"
+        )}`,
         { headers: { Authorization: cookies.access_token } }
       )
       .then((response) => {
@@ -26,9 +28,12 @@ function Saved() {
     const userID = localStorage.getItem("userID");
     if (userID) {
       axios
-        .get(`http://localhost:3000/post/saved/ids/${userID}`, {
-          headers: { Authorization: cookies.access_token },
-        })
+        .get(
+          `https://socialmedia-mern-api.vercel.app/post/saved/ids/${userID}`,
+          {
+            headers: { Authorization: cookies.access_token },
+          }
+        )
         .then((response) => {
           // console.log(response.data.saved);
           setSavedIDs(response.data.saved);

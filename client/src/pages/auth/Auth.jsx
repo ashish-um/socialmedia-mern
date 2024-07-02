@@ -28,10 +28,13 @@ const Login = ({ setRegister }) => {
     const password = e.target.elements.password.value;
 
     try {
-      const response = await axios.post("http://localhost:3000/auth/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://socialmedia-mern-api.vercel.app/auth/login",
+        {
+          username,
+          password,
+        }
+      );
       console.log(response.data);
       setCookies("access_token", response.data.token);
       localStorage.setItem("userID", response.data.userID);
@@ -100,10 +103,13 @@ const Register = ({ setRegister }) => {
     }
 
     try {
-      await axios.post("http://localhost:3000/auth/register", {
-        username,
-        password,
-      });
+      await axios.post(
+        "https://socialmedia-mern-api.vercel.app/auth/register",
+        {
+          username,
+          password,
+        }
+      );
       alert("Registeration completed, now login!");
       setRegister(false);
       setRegister;

@@ -12,7 +12,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/post/")
+      .get("https://socialmedia-mern-api.vercel.app/post/")
       .then((response) => {
         setPosts(response.data.reverse());
       })
@@ -25,9 +25,12 @@ const Home = () => {
     if (userID) {
       // Fetch Saved
       axios
-        .get(`http://localhost:3000/post/saved/ids/${userID}`, {
-          headers: { Authorization: cookies.access_token },
-        })
+        .get(
+          `https://socialmedia-mern-api.vercel.app/post/saved/ids/${userID}`,
+          {
+            headers: { Authorization: cookies.access_token },
+          }
+        )
         .then((response) => {
           // console.log(response.data.saved);
           setSavedIDs(response.data.saved);

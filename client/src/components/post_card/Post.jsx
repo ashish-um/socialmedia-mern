@@ -32,7 +32,7 @@ function Buttons({ userID, postID, defaultSave, defaultLike, initLikeCount }) {
     setSaved(2); // loading
     axios
       .put(
-        "http://localhost:3000/post/",
+        "https://socialmedia-mern-api.vercel.app/post/",
         { userID, postID },
         { headers: { Authorization: cookies.access_token } }
       )
@@ -44,9 +44,12 @@ function Buttons({ userID, postID, defaultSave, defaultLike, initLikeCount }) {
   function deleteSaved() {
     setSaved(2); // loading
     axios
-      .delete(`http://localhost:3000/post/saved/${userID}/${postID}`, {
-        headers: { Authorization: cookies.access_token },
-      })
+      .delete(
+        `https://socialmedia-mern-api.vercel.app/post/saved/${userID}/${postID}`,
+        {
+          headers: { Authorization: cookies.access_token },
+        }
+      )
       .then((res) => {
         setSaved(0);
       });
@@ -56,7 +59,7 @@ function Buttons({ userID, postID, defaultSave, defaultLike, initLikeCount }) {
     setLiked(2); // Loading
     axios
       .put(
-        "http://localhost:3000/post/liked/",
+        "https://socialmedia-mern-api.vercel.app/post/liked/",
         { userID, postID },
         { headers: { Authorization: cookies.access_token } }
       )
@@ -69,9 +72,12 @@ function Buttons({ userID, postID, defaultSave, defaultLike, initLikeCount }) {
   function deleteLiked() {
     setLiked(2); // Loading
     axios
-      .delete(`http://localhost:3000/post/liked/${userID}/${postID}`, {
-        headers: { Authorization: cookies.access_token },
-      })
+      .delete(
+        `https://socialmedia-mern-api.vercel.app/post/liked/${userID}/${postID}`,
+        {
+          headers: { Authorization: cookies.access_token },
+        }
+      )
       .then((res) => {
         setLiked(0);
         setLikeCount((count) => count - 1);
