@@ -1,0 +1,10 @@
+.profile-icon {
+  background-color: darkblue;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+  border-radius: 100%;
+  border: 1px solid white;
+}

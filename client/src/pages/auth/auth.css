@@ -1,0 +1,18 @@
+.light-p {
+  font-size: large;
+  padding-block: 10px;
+  color: rgba(255, 255, 255, 0.297);
+  button {
+    font-size: large;
+    background: none;
+    border: none;
+    color: rgb(83, 83, 210);
+    outline: none;
+  }
+}
+
+.light-p > button:focus,
+.light-p > button:hover {
+  color: white;
+  cursor: pointer;
+}

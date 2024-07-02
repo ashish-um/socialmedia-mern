@@ -1,0 +1,115 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+.card-header {
+  display: flex;
+  align-items: top;
+  gap: 10px;
+}
+
+.img-holder {
+  height: 500px;
+  width: 100%;
+  /* background-color: black; */
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  img {
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.img-holder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.52);
+  z-index: 0;
+  backdrop-filter: blur(8px);
+}
+
+.btn-holder {
+  display: flex;
+}
+
+.btn {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  padding: 5px 28px;
+  border: 0;
+  outline: 0;
+  font-size: 21px;
+  font-weight: 500;
+  background: rgb(68, 67, 67);
+  align-items: center;
+}
+
+.btn-left {
+  border-radius: 10px 0px 0px 10px;
+  /* align-items: center; */
+}
+.btn-right {
+  border-left: 1px solid grey;
+  border-radius: 0px 10px 10px 0;
+}
+
+.ripple {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: rgb(215, 156, 156);
+  bottom: -30px;
+  transform: scale(0);
+  opacity: 1;
+  transition: all 400ms;
+  /* animation: click 1s forwards; */
+  animation: click 600ms forwards;
+  pointer-events: none;
+}
+
+.ripple-green {
+  background: rgb(117, 236, 115);
+}
+
+.btn:hover {
+  background: rgb(47, 47, 47);
+}
+
+.btn-left:hover {
+  div > svg {
+    fill: rgb(236, 115, 115);
+  }
+}
+.btn-right:hover {
+  div > svg {
+    fill: rgb(117, 236, 115);
+  }
+}
+
+@keyframes click {
+  50% {
+    bottom: 10px;
+    transform: scale(20);
+    /* opacity: 1; */
+  }
+  to {
+    opacity: 0;
+    bottom: 10px;
+    transform: scale(20);
+  }
+}
