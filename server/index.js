@@ -11,8 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// app.use("/auth", userRouter);
-// app.use("/post", postRouter);
+app.use("/auth", userRouter);
+app.use("/post", postRouter);
 
 app.get("/", (req, res) => {
   res.json({ msg: "Site Online" });
