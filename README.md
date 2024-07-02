@@ -2,7 +2,7 @@
 
 ![showcase](https://github.com/ashish-um/socialmedia-mern/assets/83769253/96c47896-11b9-46a6-b53a-cf5f1c21a17b)
 
-> <a href="https://socialmedia-mern-three.vercel.app/">Live Demo🚀 (deployed on vercel) &#8605;</a>
+> <a target="blank" href="https://socialmedia-mern-three.vercel.app/">Live Demo🚀 (deployed on vercel) &#8605;</a>
 
 ## Features
 1. Authentication (Login, Registration)
