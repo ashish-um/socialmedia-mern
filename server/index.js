@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
   res.json({ msg: "Site Online" });
 });
 
-// mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI);
 
 app.listen(3000, () => {
   console.log("server running on port 3000");
