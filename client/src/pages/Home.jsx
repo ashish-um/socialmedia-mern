@@ -21,7 +21,7 @@ const Home = () => {
         setError(err);
       });
 
-    const userID = localStorage.getItem("userID");
+    const userID = cookies.access_token && localStorage.getItem("userID");
     if (userID) {
       // Fetch Saved
       axios
